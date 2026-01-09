@@ -65,7 +65,7 @@ export default async function Home() {
       <Experience experiences={data.experiences} />
 
       {/* Projects Section */}
-      <Projects projects={data.portfolioItems} />
+      <Projects projects={data.projects} />
 
       {/* Education Section */}
       <Education education={data.education} />

@@ -1,4 +1,28 @@
 {
+    "projects": [
+      {
+        "id": 1,
+        "title": "RCP - Investor Report",
+        "description": "2024 Mid-year performance report.",
+        "imageUrl": "/assets/images/project1.png",
+        "link": "https://www.richmondcap.ca/",
+        "liveUrl": "https://www.richmondcap.ca/",
+        "technologies": ["Financial Analysis", "Data Visualization", "Portfolio Management"],
+        "type": "featured",
+        "order": 1
+      },
+      {
+        "id": 2,
+        "title": "StockDock",
+        "description": "A full-stack document management platform built with modern web technologies. Features include user authentication, document catalog, import/export, client management, order management, and admin dashboard.",
+        "imageUrl": "/assets/images/project2.jpg",
+        "link": "https://github.com/noahj9/StockDock",
+        "githubUrl": "https://github.com/noahj9/StockDock",
+        "technologies": ["Django", "Python", "MongoDB", "PDF Tools"],
+        "type": "featured",
+        "order": 2
+      }
+    ],
     "portfolioItems": [
       {
         "id": 1,
@@ -86,23 +110,23 @@
       {
         "id": 1,
         "school": "Ivey Business School",
-        "degree": "Honours Business Administration",
+        "degree": "HBA",
         "startDate": "2020-10",
-        "endDate": "2025-05",
-        "description": "Currently pursuing an HBA degree with a focus on Financial Markets.",
+        "endDate": "2025-11",
+        "description": "Earned an HBA degree with most electives focused on finance and portoflio management.",
         "achievements": [
           "Dean's Honor List",
-          "Relevant coursework: Business Strategy, Finance, Marketing"
+          "Relevant coursework: Finance, Strategy, Portfolio Management, Fixed Income"
         ],
         "imageUrl": "https://www.ivey.uwo.ca/media/278427/Ivey-Main-Logo.jpg"
       },
       {
         "id": 2,
         "school": "Western University",
-        "degree": "Bachelor of Engineering Science, Software Engineering",
+        "degree": "BESc - Software Engineering",
         "startDate": "2020-10",
-        "endDate": "2025-05",
-        "description": "Currently pursuing a BESc degree in Software Engineering.",
+        "endDate": "2025-11",
+        "description": "Earned and Engineering degree with a specialization in Software Engineering.",
         "achievements": [
           "Dean's Honor List",
           "GPA: 3.9"

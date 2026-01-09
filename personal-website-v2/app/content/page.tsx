@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import SubstackWidget from "@/components/SubstackWidget";
+import { SubstackEmbed } from "@/components/SubstackEmbed";
 import TwitterWidget from "@/components/TwitterWidget";
 import ImageGallery from "@/components/ImageGallery";
 import { loadData } from "@/lib/data";
@@ -54,41 +54,60 @@ export default async function ContentPage() {
 
   return (
     <main className="min-h-screen bg-background">
-      {/* Page Header */}
-      <div className="pt-20 pb-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <h1 className="text-4xl font-bold text-accent-teal mb-4">/content</h1>
-          <p className="text-lg text-foreground-secondary max-w-2xl">
-            Stay updated with my latest thoughts, projects, and experiences
-            through my newsletter, social media, and photo gallery.
-          </p>
+      {/* Gallery Section */}
+      <section
+        id="gallery"
+        className="scroll-mt-20 flex items-start justify-center px-8 sm:px-12 lg:px-16 xl:px-24 py-16 sm:py-20 lg:py-24 font-mono"
+      >
+        <div className="max-w-5xl mx-auto w-full">
+          <ImageGallery photos={data.photos} />
         </div>
-      </div>
+      </section>
 
-      {/* Content Widgets Section */}
-      <div className="px-4 sm:px-6 lg:px-8 pb-20">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
-            {/* Substack Widget */}
-            <div className="flex justify-center">
-              <SubstackWidget
-                substackUrl="https://yoursubstack.substack.com"
-                theme="dark"
-              />
-            </div>
+      {/* Newsletter Section */}
+      <section
+        id="newsletter"
+        className="scroll-mt-20 min-h-screen flex items-center justify-center px-8 sm:px-12 lg:px-16 xl:px-24 py-16 sm:py-20 lg:py-24 font-mono"
+      >
+        <div className="max-w-5xl mx-auto w-full">
+          {/* Section Header */}
+          <div
+            className="mb-12 sm:mb-16 text-center lg:text-left"
+            style={{ marginBottom: "2.5rem" }}
+          >
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
+              <span className="text-accent-teal font-autography">/</span>
+              newsletter
+            </h2>
+          </div>
 
-            {/* Twitter Widget */}
-            <div className="flex justify-center">
-              <TwitterWidget username="yourusername" tweetCount={3} />
-            </div>
+          <div className="flex justify-center">
+            <SubstackEmbed />
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Image Gallery Section */}
-      <div className="border-t border-border">
-        <ImageGallery photos={data.photos} />
-      </div>
+      {/* Social Section */}
+      <section
+        id="social"
+        className="scroll-mt-20 min-h-screen flex items-center justify-center px-8 sm:px-12 lg:px-16 xl:px-24 py-16 sm:py-20 lg:py-24 font-mono"
+      >
+        <div className="max-w-5xl mx-auto w-full">
+          {/* Section Header */}
+          <div
+            className="mb-12 sm:mb-16 text-center lg:text-left"
+            style={{ marginBottom: "2.5rem" }}
+          >
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
+              <span className="text-accent-teal font-autography">/</span>social
+            </h2>
+          </div>
+
+          <div className="flex justify-center">
+            <TwitterWidget username="noah_jina" tweetCount={3} />
+          </div>
+        </div>
+      </section>
     </main>
   );
 }

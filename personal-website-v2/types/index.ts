@@ -6,6 +6,10 @@ export interface Project {
   description: string;
   imageUrl: string;
   link: string;
+  githubUrl?: string;
+  liveUrl?: string;
+  technologies: string[];
+  type: "featured" | "small";
   order: number;
 }
 
@@ -40,6 +44,7 @@ export interface Education {
 }
 
 export interface DataStructure {
+  projects: Project[];
   portfolioItems: Project[];
   photos: Photo[];
   experiences: Experience[];
@@ -81,11 +86,6 @@ export interface ImageModalProps {
   onClose: () => void;
   onNext?: () => void;
   onPrevious?: () => void;
-}
-
-export interface SubstackWidgetProps {
-  substackUrl: string;
-  theme?: "light" | "dark";
 }
 
 export interface TwitterWidgetProps {

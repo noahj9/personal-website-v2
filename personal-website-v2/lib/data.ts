@@ -27,9 +27,31 @@ function isValidDate(value: unknown): value is string {
 }
 
 /**
- * Validates a Project object
+ * Validates a Project object with new fields
  */
 function validateProject(item: unknown): item is Project {
+  const obj = item as Record<string, unknown>;
+  return (
+    typeof item === "object" &&
+    item !== null &&
+    isValidNumber(obj.id) &&
+    isValidString(obj.title) &&
+    isValidString(obj.description) &&
+    isValidString(obj.imageUrl) &&
+    isValidString(obj.link) &&
+    Array.isArray(obj.technologies) &&
+    obj.technologies.every((tech: unknown) => isValidString(tech)) &&
+    (obj.type === "featured" || obj.type === "small") &&
+    isValidNumber(obj.order) &&
+    (obj.githubUrl === undefined || isValidString(obj.githubUrl)) &&
+    (obj.liveUrl === undefined || isValidString(obj.liveUrl))
+  );
+}
+
+/**
+ * Validates a legacy Portfolio Item object (for backwards compatibility)
+ */
+function validatePortfolioItem(item: unknown): item is Project {
   return (
     typeof item === "object" &&
     item !== null &&
@@ -123,18 +145,38 @@ export async function loadData(): Promise<DataStructure> {
       throw new Error("Invalid data structure: root must be an object");
     }
 
-    // Validate and filter each array
+    // Validate and filter projects array
+    const projects: Project[] = [];
+    if (Array.isArray(rawData.projects)) {
+      for (const item of rawData.projects) {
+        if (validateProject(item)) {
+          projects.push(item);
+        } else {
+          console.warn("Invalid project item skipped:", item);
+        }
+      }
+    }
+
+    // Validate and filter legacy portfolioItems array (for backwards compatibility)
     const portfolioItems: Project[] = [];
     if (Array.isArray(rawData.portfolioItems)) {
       for (const item of rawData.portfolioItems) {
-        if (validateProject(item)) {
-          portfolioItems.push(item);
+        if (validatePortfolioItem(item)) {
+          // Convert legacy portfolio item to new project format
+          const project: Project = {
+            ...item,
+            technologies: [],
+            type: "small" as const,
+            githubUrl: item.link,
+          };
+          portfolioItems.push(project);
         } else {
           console.warn("Invalid portfolio item skipped:", item);
         }
       }
     }
 
+    // Validate and filter other arrays
     const photos: Photo[] = [];
     if (Array.isArray(rawData.photos)) {
       for (const item of rawData.photos) {
@@ -169,6 +211,7 @@ export async function loadData(): Promise<DataStructure> {
     }
 
     return {
+      projects: projects.sort((a, b) => a.order - b.order),
       portfolioItems: portfolioItems.sort((a, b) => a.order - b.order),
       photos: photos.sort(
         (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
@@ -184,6 +227,7 @@ export async function loadData(): Promise<DataStructure> {
 
     // Return fallback data structure to prevent application crashes
     return {
+      projects: [],
       portfolioItems: [],
       photos: [],
       experiences: [],
@@ -212,18 +256,37 @@ export async function loadDataClient(): Promise<DataStructure> {
       throw new Error("Invalid data structure: root must be an object");
     }
 
-    // Validate and filter each array
+    // Validate and filter projects array
+    const projects: Project[] = [];
+    if (Array.isArray(rawData.projects)) {
+      for (const item of rawData.projects) {
+        if (validateProject(item)) {
+          projects.push(item);
+        } else {
+          console.warn("Invalid project item skipped:", item);
+        }
+      }
+    }
+
+    // Validate and filter legacy portfolioItems array
     const portfolioItems: Project[] = [];
     if (Array.isArray(rawData.portfolioItems)) {
       for (const item of rawData.portfolioItems) {
-        if (validateProject(item)) {
-          portfolioItems.push(item);
+        if (validatePortfolioItem(item)) {
+          const project: Project = {
+            ...item,
+            technologies: [],
+            type: "small" as const,
+            githubUrl: item.link,
+          };
+          portfolioItems.push(project);
         } else {
           console.warn("Invalid portfolio item skipped:", item);
         }
       }
     }
 
+    // Validate and filter other arrays
     const photos: Photo[] = [];
     if (Array.isArray(rawData.photos)) {
       for (const item of rawData.photos) {
@@ -258,6 +321,7 @@ export async function loadDataClient(): Promise<DataStructure> {
     }
 
     return {
+      projects: projects.sort((a, b) => a.order - b.order),
       portfolioItems: portfolioItems.sort((a, b) => a.order - b.order),
       photos: photos.sort(
         (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
@@ -273,6 +337,7 @@ export async function loadDataClient(): Promise<DataStructure> {
 
     // Return fallback data structure to prevent application crashes
     return {
+      projects: [],
       portfolioItems: [],
       photos: [],
       experiences: [],
@@ -286,7 +351,11 @@ export async function loadDataClient(): Promise<DataStructure> {
  */
 export async function getProjectById(id: number): Promise<Project | null> {
   const data = await loadData();
-  return data.portfolioItems.find((project) => project.id === id) || null;
+  return (
+    data.projects.find((project) => project.id === id) ||
+    data.portfolioItems.find((project) => project.id === id) ||
+    null
+  );
 }
 
 /**
