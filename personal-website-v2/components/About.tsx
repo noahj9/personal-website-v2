@@ -5,8 +5,8 @@ import Image from "next/image";
 
 const About: React.FC = () => {
   // Current role and company information
-  const currentRole = "Software Development Engineer Intern";
-  const currentCompany = "Amazon Web Services";
+  const currentRole = "Software Engineer";
+  const currentCompany = "AWS";
 
   // Personal interests
   const personalInterests =
