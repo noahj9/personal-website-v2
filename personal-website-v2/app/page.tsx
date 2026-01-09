@@ -43,7 +43,7 @@ export default async function Home() {
   const heroData = {
     name: "Noah", // This should come from data.json or be configured
     introduction:
-      "I'm a Software Engineering student at Western University and Business student at Ivey Business School. Currently interning at Amazon Web Services, building scalable solutions and exploring the intersection of technology and business.",
+      "I am a Software Engineer currently based in Toronto, originally from Calgary. I'm always working on the next project or venture and happy to chat/connect.",
     profileImageSrc: "/assets/images/profile.jpg",
   };
 

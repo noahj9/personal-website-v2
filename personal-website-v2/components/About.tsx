@@ -10,7 +10,7 @@ const About: React.FC = () => {
 
   // Personal interests
   const personalInterests =
-    "When I'm not coding, you'll find me exploring the mountains of British Columbia, whether it's hiking to remote cabins like Asulkan Hut or skiing fresh powder. I'm passionate about travel and have backpacked through Europe, exploring everything from Croatia's stunning Plitvice Lakes to Poland's Tatra Mountains. I also enjoy golfing, managing investment portfolios, and discovering new cultures through food and local experiences.";
+    "When I'm not building, you'll find me exploring the mountains, whether it's hiking to remote cabins or skiing fresh powder. I enjoy about travel and have backpacked through Europe and Southeast Asia. I'm also a huge sports fan (hockey, golf, tennis) and an avid golfer. I love discovering new cultures through food and local experiences.";
 
   return (
     <section
@@ -49,10 +49,9 @@ const About: React.FC = () => {
                 <span className="text-accent-teal font-semibold">
                   {currentCompany}
                 </span>
-                , where I work on building scalable cloud infrastructure and
-                security features that serve millions of users worldwide.
-                I&apos;m passionate about creating elegant solutions to complex
-                technical challenges.
+                , where I work on ease of access and security features that
+                serve millions of users worldwide. I enjoy challenging technical
+                problems and collaborating with other builders.
               </p>
             </div>
 
@@ -62,7 +61,7 @@ const About: React.FC = () => {
                 className="text-lg sm:text-xl font-bold text-foreground"
                 style={{ marginBottom: "0.75rem" }}
               >
-                Beyond the code
+                Beyond Work
               </h3>
               <p
                 style={{
