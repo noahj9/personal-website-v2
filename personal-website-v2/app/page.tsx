@@ -7,11 +7,10 @@ import Education from "@/components/Education";
 import { loadData } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Home",
   description:
     "Welcome to Noah's portfolio. Software Engineering student at Western University and Business student at Ivey Business School. Currently interning at Amazon Web Services, building scalable solutions.",
   openGraph: {
-    title: "Noah - Software Engineer & Business Student",
+    title: "Noah",
     description:
       "Software Engineering student at Western University and Business student at Ivey Business School. Currently interning at Amazon Web Services.",
     url: "https://yourwebsite.com",
@@ -20,13 +19,13 @@ export const metadata: Metadata = {
         url: "/assets/images/profile.jpg",
         width: 1200,
         height: 630,
-        alt: "Noah - Software Engineer & Business Student",
+        alt: "Noah",
         type: "image/jpeg",
       },
     ],
   },
   twitter: {
-    title: "Noah - Software Engineer & Business Student",
+    title: "Noah",
     description:
       "Software Engineering student at Western University and Business student at Ivey Business School. Currently interning at Amazon Web Services.",
     images: ["/assets/images/profile.jpg"],

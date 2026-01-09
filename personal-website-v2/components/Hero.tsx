@@ -52,7 +52,7 @@ const Hero: React.FC<HeroProps> = ({ name, introduction, profileImageSrc }) => {
               className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-normal leading-tight"
               style={{ marginBottom: "1rem" }}
             >
-              hi, <span className="text-accent-teal">{name}</span> here.
+              hi,<span className="text-accent-teal">{name}</span> here.
             </h1>
             <p
               className="text-foreground-secondary leading-relaxed max-w-2xl mx-auto lg:mx-0"

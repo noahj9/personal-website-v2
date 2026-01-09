@@ -23,10 +23,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: {
-    default: "Noah Jina - Software Engineer & Business Student",
-    template: "%s | Noah - Portfolio",
-  },
+  title: "Noah",
   description:
     "Software Engineering student at Western University and Business student at Ivey Business School. Currently interning at Amazon Web Services, building scalable solutions and exploring the intersection of technology and business.",
   keywords: [
@@ -44,8 +41,6 @@ export const metadata: Metadata = {
     "Next.js",
     "TypeScript",
     "Full Stack Developer",
-    "Student",
-    "Intern",
   ],
   authors: [{ name: "Noah", url: "https://yourwebsite.com" }],
   creator: "Noah",
@@ -65,8 +60,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://yourwebsite.com",
-    siteName: "Noah - Portfolio",
-    title: "Noah - Software Engineer & Business Student",
+    siteName: "Noah",
+    title: "Noah",
     description:
       "Software Engineering student at Western University and Business student at Ivey Business School. Currently interning at Amazon Web Services.",
     images: [
@@ -74,14 +69,14 @@ export const metadata: Metadata = {
         url: "/assets/images/profile.jpg",
         width: 1200,
         height: 630,
-        alt: "Noah - Software Engineer & Business Student",
+        alt: "Noah",
         type: "image/jpeg",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Noah - Software Engineer & Business Student",
+    title: "Noah",
     description:
       "Software Engineering student at Western University and Business student at Ivey Business School. Currently interning at Amazon Web Services.",
     images: ["/assets/images/profile.jpg"],
@@ -174,9 +169,9 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
         {/* Favicon and app icons */}
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="icon" href="/Symbol.png" type="image/png" />
+        <link rel="shortcut icon" href="/Symbol.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/Symbol.png" />
         <link rel="manifest" href="/manifest.json" />
         {/* Theme color for mobile browsers */}
         <meta name="theme-color" content="#0d9488" />

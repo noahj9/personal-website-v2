@@ -145,22 +145,22 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection }) => {
   const socialLinks = [
     {
       name: "Email",
-      href: "mailto:your.email@example.com",
+      href: "mailto:njina.hba2025@ivey.ca",
       icon: EmailIcon,
     },
     {
       name: "GitHub",
-      href: "https://github.com/yourusername",
+      href: "https://github.com/noahj9",
       icon: GitHubIcon,
     },
     {
       name: "LinkedIn",
-      href: "https://linkedin.com/in/yourprofile",
+      href: "https://linkedin.com/in/noahjina",
       icon: LinkedInIcon,
     },
     {
       name: "Instagram",
-      href: "https://instagram.com/yourusername",
+      href: "https://instagram.com/noahj_09",
       icon: InstagramIcon,
     },
     {
@@ -195,7 +195,7 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection }) => {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`text-base font-medium transition-colors duration-200 ${
+                  className={`text-base font-medium transition-colors duration-200 cursor-pointer ${
                     activeSection === item.id
                       ? "text-accent-teal"
                       : "text-foreground hover:text-accent-teal"
@@ -206,7 +206,7 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection }) => {
               ))}
               <Link
                 href="/content"
-                className="text-base font-medium text-foreground hover:text-accent-teal transition-colors duration-200"
+                className="text-base font-medium text-foreground hover:text-accent-teal transition-colors duration-200 cursor-pointer"
               >
                 Content
               </Link>

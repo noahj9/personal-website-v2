@@ -41,7 +41,7 @@ const About: React.FC = () => {
                   textAlign: "justify",
                 }}
               >
-                I&apos;m currently a{" "}
+                I'm currently a{" "}
                 <span className="text-accent-teal font-semibold">
                   {currentRole}
                 </span>{" "}
