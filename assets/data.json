@@ -1,0 +1,114 @@
+{
+    "portfolioItems": [
+      {
+        "id": 1,
+        "title": "Project Alpha",
+        "description": "A revolutionary web application",
+        "imageUrl": "https://placehold.co/600x400",
+        "link": "https://example.com",
+        "order": 1
+      }
+    ],
+    "photos": [
+      {
+        "id": 1,
+        "title": "Golfing",
+        "imageUrl": "golf1.png",
+        "description": "Golfing at Mickelson National GC",
+        "date": "2022-08-15"
+      },
+      {
+        "id": 2,
+        "title": "Asulkan Hut, BC",
+        "imageUrl": "asulkan2024.jpeg",
+        "description": "Family (+ Tristan) trip to Asulkan Hut. This was our 5th time making it up to the hut. Breathtaking every time!",
+        "date": "2024-09-04"
+      },
+      {
+        "id": 3,
+        "title": "Medellin, Colombia",
+        "imageUrl": "medellin2024.jpeg",
+        "description": "Family trip to Colombia. Stunning views from Comuna 13.",
+        "date": "2023-07-20"
+      },
+      {
+        "id": 4,
+        "title": "Plitvice Lakes National Park, Croatia",
+        "imageUrl": "plitvice.jpg",
+        "description": "Day trip to Plitvice Lakes National Park while backpacking Europe.",
+        "date": "2022-06-02"
+      },
+      {
+        "id": 5,
+        "title": "Woodbury Cabin, BC",
+        "imageUrl": "woodbury.jpg",
+        "description": "Weekend hiking trip to Woodbury and Silverspray Cabins.",
+        "date": "2024-01-15"
+      },
+      {
+        "id": 6,
+        "title": "Zakopane, Poland",
+        "imageUrl": "poland1.jpeg",
+        "description": "Hiking the Tatra Mountains in Zakopane, Poland.",
+        "date": "2022-06-10"
+      },
+      {
+        "id": 7,
+        "title": "Santa Marta, Colombia",
+        "imageUrl": "santamarta2024.jpeg",
+        "description": "Family trip to Colombia. Beautiful sunset from our hotel in Santa Marta.",
+        "date": "2023-07-24"
+      }
+    ],
+    "experiences": [
+      {
+        "id": 1,
+        "company": "Amazon Web Services",
+        "role": "Software Development Engineer Intern",
+        "description": "Joined AWS SignUp Team for a Summer Internship. Integrated a new security feature into the SignUp flow. Received a full-time return offer.",
+        "startDate": "2024-07",
+        "endDate": "2024-09",
+        "order": 1,
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg"
+      },
+      {
+        "id": 2,
+        "company": "Richmond Capital Partners",
+        "role": "Managing Partner, Portfolio Manager",
+        "description": "UWO's largest student fund. Strategies: Event-Driven Macro, Long/Short Equities, Quantitative Derivatives, Commodities.",
+        "startDate": "2023-10",
+        "endDate": null,
+        "order": 1,
+        "imageUrl": "logo.png"
+      }
+    ],
+    "education": [
+      {
+        "id": 1,
+        "school": "Ivey Business School",
+        "degree": "Honours Business Administration",
+        "startDate": "2020-10",
+        "endDate": "2025-05",
+        "description": "Currently pursuing an HBA degree with a focus on Financial Markets.",
+        "achievements": [
+          "Dean's Honor List",
+          "Relevant coursework: Business Strategy, Finance, Marketing"
+        ],
+        "imageUrl": "https://www.ivey.uwo.ca/media/278427/Ivey-Main-Logo.jpg"
+      },
+      {
+        "id": 2,
+        "school": "Western University",
+        "degree": "Bachelor of Engineering Science, Software Engineering",
+        "startDate": "2020-10",
+        "endDate": "2025-05",
+        "description": "Currently pursuing a BESc degree in Software Engineering.",
+        "achievements": [
+          "Dean's Honor List",
+          "GPA: 3.9"
+        ],
+        "imageUrl": "western.png"
+      }
+    ]
+  }
+  

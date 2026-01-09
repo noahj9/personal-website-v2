@@ -1,0 +1,94 @@
+// TypeScript interfaces for data models based on assets/data.json structure
+
+export interface Project {
+  id: number;
+  title: string;
+  description: string;
+  imageUrl: string;
+  link: string;
+  order: number;
+}
+
+export interface Photo {
+  id: number;
+  title: string;
+  imageUrl: string;
+  description: string;
+  date: string;
+}
+
+export interface Experience {
+  id: number;
+  company: string;
+  role: string;
+  description: string;
+  startDate: string;
+  endDate: string | null;
+  order: number;
+  imageUrl: string;
+}
+
+export interface Education {
+  id: number;
+  school: string;
+  degree: string;
+  startDate: string;
+  endDate: string;
+  description: string;
+  achievements: string[];
+  imageUrl: string;
+}
+
+export interface DataStructure {
+  portfolioItems: Project[];
+  photos: Photo[];
+  experiences: Experience[];
+  education: Education[];
+}
+
+// Component prop interfaces
+export interface NavigationProps {
+  currentSection?: string;
+}
+
+export interface SocialLink {
+  name: string;
+  href: string;
+  icon: React.ComponentType;
+}
+
+export interface HeroProps {
+  name: string;
+  introduction: string;
+  profileImageSrc: string;
+}
+
+export interface ExperienceProps {
+  experiences: Experience[];
+}
+
+export interface ProjectsProps {
+  projects: Project[];
+}
+
+export interface ImageGalleryProps {
+  photos: Photo[];
+}
+
+export interface ImageModalProps {
+  isOpen: boolean;
+  image: Photo | null;
+  onClose: () => void;
+  onNext?: () => void;
+  onPrevious?: () => void;
+}
+
+export interface SubstackWidgetProps {
+  substackUrl: string;
+  theme?: "light" | "dark";
+}
+
+export interface TwitterWidgetProps {
+  username: string;
+  tweetCount?: number;
+}
