@@ -23,16 +23,6 @@
         "order": 2
       }
     ],
-    "portfolioItems": [
-      {
-        "id": 1,
-        "title": "Project Alpha",
-        "description": "A revolutionary web application",
-        "imageUrl": "https://placehold.co/600x400",
-        "link": "https://example.com",
-        "order": 1
-      }
-    ],
     "photos": [
       {
         "id": 1,

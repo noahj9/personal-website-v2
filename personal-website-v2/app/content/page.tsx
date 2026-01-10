@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { SubstackEmbed } from "@/components/SubstackEmbed";
 import TwitterWidget from "@/components/TwitterWidget";
 import ImageGallery from "@/components/ImageGallery";
+import { FeatureFlagWrapper } from "@/components/FeatureFlagWrapper";
 import { loadData } from "@/lib/data";
 
 export const metadata: Metadata = {
@@ -82,7 +83,16 @@ export default async function ContentPage() {
           </div>
 
           <div className="flex justify-center">
-            <SubstackEmbed />
+            <FeatureFlagWrapper
+              flagKey="substack_widget_enabled"
+              fallback={
+                <div className="text-center text-foreground-secondary">
+                  <p>Newsletter content is currently unavailable.</p>
+                </div>
+              }
+            >
+              <SubstackEmbed />
+            </FeatureFlagWrapper>
           </div>
         </div>
       </section>
@@ -104,7 +114,16 @@ export default async function ContentPage() {
           </div>
 
           <div className="flex justify-center">
-            <TwitterWidget username="noah_jina" tweetCount={3} />
+            <FeatureFlagWrapper
+              flagKey="twitter_widget_enabled"
+              fallback={
+                <div className="text-center text-foreground-secondary">
+                  <p>Social media content is currently unavailable.</p>
+                </div>
+              }
+            >
+              <TwitterWidget username="noah_jina" tweetCount={3} />
+            </FeatureFlagWrapper>
           </div>
         </div>
       </section>

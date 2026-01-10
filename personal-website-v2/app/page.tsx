@@ -4,6 +4,7 @@ import About from "@/components/About";
 import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
 import Education from "@/components/Education";
+import MailAnimation from "@/components/MailAnimation";
 import { loadData } from "@/lib/data";
 
 export const metadata: Metadata = {
@@ -69,6 +70,17 @@ export default async function Home() {
 
       {/* Education Section */}
       <Education education={data.education} />
+
+      {/* Mail Animation Section */}
+      <section className="pt-16 lg:pt-20 pb-8 flex flex-col items-center justify-center bg-background">
+        <MailAnimation className="mb-4" />
+        <h2 className="text-xl md:text-2xl font-mono text-foreground text-center">
+          Let's Connect!
+        </h2>
+      </section>
+
+      {/* Bottom Spacer */}
+      <div className="h-16 lg:h-24 bg-background"></div>
     </main>
   );
 }

@@ -92,3 +92,27 @@ export interface TwitterWidgetProps {
   username: string;
   tweetCount?: number;
 }
+
+// Feature Flag Component Interfaces
+export interface FeatureFlagWrapperProps {
+  flagKey: string;
+  children: React.ReactNode;
+  fallback?: React.ReactNode;
+  loadingComponent?: React.ReactNode;
+  errorComponent?: React.ReactNode;
+  className?: string;
+}
+
+export interface WidgetControllerProps {
+  substackEnabled?: boolean;
+  twitterEnabled?: boolean;
+  children: React.ReactNode;
+  className?: string;
+}
+
+// Mail Animation Component Interface
+export interface MailAnimationProps {
+  onClick?: () => void;
+  className?: string;
+  enabled?: boolean;
+}
