@@ -3,6 +3,7 @@ import { SubstackEmbed } from "@/components/SubstackEmbed";
 import TwitterWidget from "@/components/TwitterWidget";
 import ImageGallery from "@/components/ImageGallery";
 import { FeatureFlagWrapper } from "@/components/FeatureFlagWrapper";
+import TextFlipAnimation from "@/components/TextFlipAnimation";
 import { loadData } from "@/lib/data";
 
 export const metadata: Metadata = {
@@ -55,10 +56,31 @@ export default async function ContentPage() {
 
   return (
     <main className="min-h-screen bg-background">
+      {/* Text Flip Animation Section */}
+      <section
+        id="text-animation"
+        className="h-[50vh] flex items-center justify-center px-8 sm:px-12 lg:px-16 xl:px-28 font-mono"
+      >
+        <div className="max-w-5xl mx-auto w-full">
+          <div className="flex justify-center">
+            <FeatureFlagWrapper
+              flagKey="text_flip_animation_enabled"
+              fallback={
+                <div className="text-center text-foreground-secondary">
+                  <p className="font-mono text-lg">about my </p>
+                </div>
+              }
+            >
+              <TextFlipAnimation />
+            </FeatureFlagWrapper>
+          </div>
+        </div>
+      </section>
+
       {/* Gallery Section */}
       <section
         id="gallery"
-        className="scroll-mt-20 flex items-start justify-center px-8 sm:px-12 lg:px-16 xl:px-24 py-16 sm:py-20 lg:py-24 font-mono"
+        className="scroll-mt-20 flex items-start justify-center px-8 sm:px-12 lg:px-16 xl:px-24 pb-16 sm:pb-20 lg:pb-24 font-mono"
       >
         <div className="max-w-5xl mx-auto w-full">
           <ImageGallery photos={data.photos} />

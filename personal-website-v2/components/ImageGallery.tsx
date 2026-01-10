@@ -49,9 +49,6 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ photos }) => {
 
   return (
     <div>
-      {/* Navbar spacer - matches navbar height */}
-      <div className="h-20"></div>
-
       {/* Section Header - matching other sections */}
       <div
         className="mb-12 sm:mb-16 text-center lg:text-left"
