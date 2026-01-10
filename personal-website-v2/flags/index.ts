@@ -6,6 +6,7 @@ import type { Identify } from "flags";
 const DEFAULT_FLAG_VALUES: Record<string, boolean> = {
   substack_widget_enabled: true,
   twitter_widget_enabled: true,
+  instagram_widget_enabled: true,
   mail_animation_enabled: true,
   text_flip_animation_enabled: true,
 };
@@ -84,6 +85,9 @@ export const substackWidgetFlag = () =>
 
 export const twitterWidgetFlag = () =>
   createFeatureFlag("twitter_widget_enabled");
+
+export const instagramWidgetFlag = () =>
+  createFeatureFlag("instagram_widget_enabled");
 
 export const mailAnimationFlag = () =>
   createFeatureFlag("mail_animation_enabled");

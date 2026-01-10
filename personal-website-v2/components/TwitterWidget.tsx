@@ -86,34 +86,36 @@ const TwitterWidget: React.FC<TwitterWidgetProps> = ({
 
   return (
     <div className="w-full max-w-2xl mx-auto">
-      <div className="bg-background-secondary rounded-lg border border-border overflow-hidden">
+      <div className="bg-background-secondary rounded-xl shadow-lg overflow-hidden">
         {/* Header */}
-        <div className="p-4 border-b border-border flex items-center gap-3">
-          <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
+        <div className="px-6 py-6 border-border/20 flex items-center gap-4">
+          <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center shadow-md">
             <svg
-              className="w-5 h-5 text-white"
+              className="w-6 h-6 text-white"
               fill="currentColor"
               viewBox="0 0 24 24"
             >
               <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
             </svg>
           </div>
-          <div>
-            <h3 className="font-semibold text-foreground">@{username}</h3>
+          <div className="flex-1">
+            <h3 className="font-semibold text-foreground text-lg">
+              @{username}
+            </h3>
             <p className="text-sm text-foreground-secondary">Latest Tweets</p>
           </div>
           <a
             href={`https://twitter.com/${username}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="ml-auto text-accent-teal hover:text-accent-teal/80 transition-colors duration-200 text-sm font-medium"
+            className="text-accent-teal hover:text-accent-teal/80 transition-colors duration-200 text-sm font-medium px-3 py-1.5 rounded-md hover:bg-accent-teal/10"
           >
             View Profile →
           </a>
         </div>
 
         {/* Twitter Timeline Container */}
-        <div className="p-4">
+        <div className="p-6">
           {isLoading && (
             <div className="min-h-[400px] flex items-center justify-center">
               <div className="text-center">

@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { SubstackEmbed } from "@/components/SubstackEmbed";
 import TwitterWidget from "@/components/TwitterWidget";
+import InstagramWidget from "@/components/InstagramWidget";
 import ImageGallery from "@/components/ImageGallery";
 import { FeatureFlagWrapper } from "@/components/FeatureFlagWrapper";
 import TextFlipAnimation from "@/components/TextFlipAnimation";
@@ -135,17 +136,35 @@ export default async function ContentPage() {
             </h2>
           </div>
 
-          <div className="flex justify-center">
-            <FeatureFlagWrapper
-              flagKey="twitter_widget_enabled"
-              fallback={
-                <div className="text-center text-foreground-secondary">
-                  <p>Social media content is currently unavailable.</p>
-                </div>
-              }
-            >
-              <TwitterWidget username="noah_jina" tweetCount={3} />
-            </FeatureFlagWrapper>
+          {/* Social Widgets Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+            {/* Twitter Widget */}
+            <div className="flex justify-center">
+              <FeatureFlagWrapper
+                flagKey="twitter_widget_enabled"
+                fallback={
+                  <div className="text-center text-foreground-secondary w-full max-w-2xl">
+                    <p>Twitter content is currently unavailable.</p>
+                  </div>
+                }
+              >
+                <TwitterWidget username="noah_jina" tweetCount={3} />
+              </FeatureFlagWrapper>
+            </div>
+
+            {/* Instagram Widget */}
+            <div className="flex justify-center">
+              <FeatureFlagWrapper
+                flagKey="instagram_widget_enabled"
+                fallback={
+                  <div className="text-center text-foreground-secondary w-full max-w-2xl">
+                    <p>Instagram content is currently unavailable.</p>
+                  </div>
+                }
+              >
+                <InstagramWidget username="noahj_09" postCount={3} />
+              </FeatureFlagWrapper>
+            </div>
           </div>
         </div>
       </section>

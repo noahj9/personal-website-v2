@@ -93,6 +93,11 @@ export interface TwitterWidgetProps {
   tweetCount?: number;
 }
 
+export interface InstagramWidgetProps {
+  username: string;
+  postCount?: number;
+}
+
 // Feature Flag Component Interfaces
 export interface FeatureFlagWrapperProps {
   flagKey: string;

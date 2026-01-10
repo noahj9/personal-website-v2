@@ -51,7 +51,7 @@ const TextFlipAnimation: React.FC<TextFlipAnimationProps> = ({
   return (
     <div className={`text-flip-animation-container ${className}`}>
       <div className="text-flip-wrapper">
-        <span className="text-flip-prefix">explore my </span>
+        <span className="text-flip-prefix">explore my: </span>
         <div className="text-flip-word-container">
           <span
             className={`text-flip-word ${animationPhase}`}
