@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Space_Mono } from "next/font/google";
 import Navigation from "@/components/Navigation";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const inter = Inter({
@@ -190,6 +191,7 @@ export default function RootLayout({
           {/* Add padding-top to account for fixed navigation */}
           {children}
         </div>
+        <Analytics />
       </body>
     </html>
   );
