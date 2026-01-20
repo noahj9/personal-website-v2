@@ -21,6 +21,17 @@
         "technologies": ["Django", "Python", "MongoDB", "PDF Tools"],
         "type": "featured",
         "order": 2
+      },
+      {
+        "id": 3,
+        "title": "Atlas Code",
+        "description": "An AI-powered solution to carry the weight of your technical debt. Atlas Code automatically and retroactively identifies and fixes technical debt within your codebase.",
+        "imageUrl": "/assets/images/project3.png",
+        "link": "https://8090-hackathon.vercel.app/",
+        "githubUrl": "https://github.com/jamesmoraless/8090-hackathon",
+        "technologies": ["Supabase", "Claude-Code", "Github Actions", "React"],
+        "type": "featured",
+        "order": 3
       }
     ],
     "photos": [
@@ -79,9 +90,9 @@
         "id": 1,
         "company": "Amazon Web Services",
         "role": "Software Engineer",
-        "description": "Joined AWS SignUp Team for a Summer Internship. Integrated a new security feature into the SignUp flow. Received a full-time return offer.",
-        "startDate": "2024-07",
-        "endDate": "2024-09",
+        "description": "Rejoined as a fulltime hire after an internship. Building on the Identity Threat ML Team.",
+        "startDate": "2025-10",
+        "endDate": null,
         "order": 1,
         "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg"
       },
@@ -90,8 +101,8 @@
         "company": "Richmond Capital Partners",
         "role": "Managing Partner, Portfolio Manager",
         "description": "UWO's largest student fund. Strategies: Event-Driven Macro, Long/Short Equities, Quantitative Derivatives, Commodities.",
-        "startDate": "2023-10",
-        "endDate": null,
+        "startDate": "2024-10",
+        "endDate": "2025-06",
         "order": 1,
         "imageUrl": "logo.png"
       }

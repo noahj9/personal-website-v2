@@ -60,9 +60,9 @@ const InstagramWidget: React.FC<InstagramWidgetProps> = ({
   }, [username, postCount, isLoading]);
   return (
     <div className="w-full max-w-2xl mx-auto">
-      <div className="bg-background-secondary rounded-xl shadow-lg overflow-hidden h-full">
+      <div className="bg-background-secondary rounded-xl shadow-lg h-full">
         {/* Header */}
-        <div className="px-6 border-border/20 flex items-center gap-4 mb-10">
+        <div className="px-6 py-6 border-b border-border/20 flex items-center gap-4">
           <div className="w-10 h-10 bg-gradient-to-br from-purple-500 via-pink-500 to-orange-500 rounded-full flex items-center justify-center shadow-md">
             <svg
               className="w-6 h-6 text-white"
@@ -88,7 +88,7 @@ const InstagramWidget: React.FC<InstagramWidgetProps> = ({
           </a>
         </div>
         {/* Instagram Embed Container */}
-        <div className="p-6 flex-1">
+        <div className="px-6 pb-6 pt-10 flex-1">
           {isLoading && (
             <div className="min-h-[300px] flex items-center justify-center">
               <div className="text-center">
