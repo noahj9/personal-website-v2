@@ -10,7 +10,7 @@ const About: React.FC = () => {
 
   // Personal interests
   const personalInterests =
-    "When I'm not building, you'll find me exploring the mountains, whether it's hiking to remote cabins or skiing fresh powder. I enjoy about travel and have backpacked through Europe and Southeast Asia. I'm also a huge sports fan (hockey, golf, tennis) and an avid golfer. I love discovering new cultures through food and local experiences.";
+    "When I'm not building, you'll find me exploring the mountains, whether it's hiking to remote cabins or skiing fresh powder. I enjoy travelling and have backpacked through Europe and Southeast Asia. I'm also a huge sports fan (hockey, golf, tennis) and an avid golfer. I love discovering new cultures through food and local experiences.";
 
   return (
     <section
